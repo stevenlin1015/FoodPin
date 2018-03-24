@@ -10,6 +10,12 @@ import UIKit
 
 class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var typeTextField: UITextField!
+    @IBOutlet var locationTextField: UITextField!
+    @IBOutlet var yesButton: UIButton!
+    @IBOutlet var noButton: UIButton!
+    var isVisited = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +50,34 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         
         dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBAction func save(_ sender: Any) {
+        if(nameTextField.text == "" || typeTextField.text == "" || locationTextField.text == "") {
+            let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        }
+        print("Name: \(nameTextField.text)")
+        print("Type: \(typeTextField.text)")
+        print("Location: \(locationTextField.text)")
+        print("Have you been here: \(isVisited)")
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func toggleBeenHereButton(_ sender: UIButton) {
+        if sender == yesButton {
+            isVisited = true
+            yesButton.backgroundColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+            noButton.backgroundColor = UIColor(red: 218.0/255.0, green: 223.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+        } else if sender == noButton {
+            isVisited = false
+            yesButton.backgroundColor = UIColor(red: 218.0/255.0, green: 223.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+            noButton.backgroundColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+        }
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {

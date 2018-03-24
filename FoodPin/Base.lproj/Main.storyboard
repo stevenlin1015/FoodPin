@@ -491,23 +491,29 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyP-9n-YTG">
                                                     <rect key="frame" x="16" y="31" width="44" height="30"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.85490196078431369" green="0.39215686274509803" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="uEi-Fe-mLo"/>
                                                     </constraints>
                                                     <state key="normal" title="YES">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="V93-PK-U9j" eventType="touchUpInside" id="dNb-47-ADQ"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whn-zN-Xim">
                                                     <rect key="frame" x="68" y="31" width="44" height="30"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.85490196078431369" green="0.87450980392156863" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Dil-3v-HvL"/>
                                                     </constraints>
                                                     <state key="normal" title="NO">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="V93-PK-U9j" eventType="touchUpInside" id="jBH-mE-vjK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -541,9 +547,20 @@
                                 <segue destination="VYB-FZ-1iE" kind="unwind" unwindAction="unwindToHomeScreenWithSegue:" id="aUD-60-2hV"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="CEc-I7-0iO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="save:" destination="V93-PK-U9j" id="QHW-88-ZG1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationTextField" destination="KBG-wZ-dYS" id="2JU-6L-OCZ"/>
+                        <outlet property="nameTextField" destination="2g3-SR-LXK" id="z5n-dc-oNR"/>
+                        <outlet property="noButton" destination="Whn-zN-Xim" id="ADe-yq-0et"/>
                         <outlet property="photoImageView" destination="D7h-TR-BGP" id="Fhu-oj-HZM"/>
+                        <outlet property="typeTextField" destination="ICu-iY-kSZ" id="I3t-Al-UKU"/>
+                        <outlet property="yesButton" destination="IyP-9n-YTG" id="2q9-oQ-ZFq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huT-Jj-G6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
