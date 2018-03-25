@@ -67,6 +67,17 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         return contentViewController(at: index)
     }
     
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return pageHeadings.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        if let pageContentViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughContentViewController") as? WalkthroughContentViewController {
+            return pageContentViewController.index
+        }
+        return 0
+    }
+    
     /*
     // MARK: - Navigation
 
