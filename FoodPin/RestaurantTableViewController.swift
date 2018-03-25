@@ -8,8 +8,9 @@
 
 import UIKit
 
-class RestaurantTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController, UISearchResultsUpdating {
     
+    var searchController: UISearchController!
     var restaurants:[Restaurant] = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "G/F, 72 Po Hing Fong, Sheung Wan, Hong Kong", phone: "232-923423", image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Shop B, G/F, 22-24A Tai Ping San Street SOHO, Sheung Wan, Hong Kong", phone: "348-233423", image: "homei.jpg", isVisited: false),
@@ -33,7 +34,7 @@ class RestaurantTableViewController: UITableViewController {
         Restaurant(name: "Royal Oak", type: "British", location: "2 Regency Street London SW1P 4BZ United Kingdom", phone: "343-988834", image: "royaloak.jpg", isVisited: false),
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "22 Charlwood Street London SW1V 2DY Pimlico", phone: "432-344050", image: "caskpubkitchen.jpg", isVisited: false)
     ]
-
+    var searchResults:[Restaurant] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,11 @@ class RestaurantTableViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        searchController = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +62,23 @@ class RestaurantTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func filterContent(for searchText: String) {
+        searchResults = restaurants.filter({ (restaurant) -> Bool in
+            if (restaurant).name is String {
+                let isMatch = (restaurant).name.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            return false
+        })
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -64,20 +87,26 @@ class RestaurantTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurants.count
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return restaurants.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
+        //判斷是從搜尋結果或者是原來的陣列來取得餐廳
+        let restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
         
-        cell.nameLabel.text = restaurants[indexPath.row].name
-        cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
+        cell.nameLabel.text = restaurant.name
+        cell.thumbnailImageView.image = UIImage(named: restaurant.image)
         cell.thumbnailImageView.layer.cornerRadius = 30.0
         cell.thumbnailImageView.clipsToBounds = true
-        cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.typeLabel.text = restaurants[indexPath.row].type
+        cell.locationLabel.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
 
         if restaurants[indexPath.row].isVisited {
             cell.accessoryType = .checkmark
@@ -149,6 +178,13 @@ class RestaurantTableViewController: UITableViewController {
         return [deleteAction, shareAction]
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if searchController.isActive {
+            return false
+        } else {
+            return true
+        }
+    }
 
     
     /*
@@ -192,7 +228,7 @@ class RestaurantTableViewController: UITableViewController {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
-                destinationController.restaurant = restaurants[indexPath.row]
+                destinationController.restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
     }
