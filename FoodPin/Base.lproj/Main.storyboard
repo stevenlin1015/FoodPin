@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -568,6 +569,14 @@
             </objects>
             <point key="canvasLocation" x="1970" y="-567"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="w45-1z-4iE">
+            <objects>
+                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="WKK-dn-hHu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2lM-5a-Oce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1324" y="150"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="yBM-EB-Mzo">
             <objects>
@@ -585,6 +594,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfO-lt-M1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-334" y="150"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QuZ-iO-Xvf">
+            <objects>
+                <viewController storyboardIdentifier="WalkthroughContentViewController" id="tFY-df-MqS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g38-B3-qkg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personalize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7R-jJ-L5M">
+                                <rect key="frame" x="114" y="40" width="147.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aPA-qU-RTC">
+                                <rect key="frame" x="37" y="90" width="300" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aPA-qU-RTC" secondAttribute="height" multiplier="75:58" id="1vM-mU-wpu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin your favorite restaurants and create your own food guide" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E4-ey-ORf">
+                                <rect key="frame" x="46" y="330" width="282" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Xa4-ze-HdO"/>
+                                    <constraint firstAttribute="width" constant="282" id="Yam-pT-bjc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75294117647058822" green="0.22352941176470587" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="C7R-jJ-L5M" firstAttribute="top" secondItem="99L-fX-mEQ" secondAttribute="top" constant="20" id="2ml-X6-9Xf"/>
+                            <constraint firstItem="8E4-ey-ORf" firstAttribute="centerX" secondItem="99L-fX-mEQ" secondAttribute="centerX" id="8MG-7d-rrr"/>
+                            <constraint firstItem="8E4-ey-ORf" firstAttribute="top" secondItem="aPA-qU-RTC" secondAttribute="bottom" constant="8" id="O9i-ej-fBi"/>
+                            <constraint firstItem="aPA-qU-RTC" firstAttribute="leading" secondItem="99L-fX-mEQ" secondAttribute="leading" constant="37" id="SGT-ub-gTN"/>
+                            <constraint firstItem="aPA-qU-RTC" firstAttribute="top" secondItem="C7R-jJ-L5M" secondAttribute="bottom" constant="14" id="WPn-EZ-aVY"/>
+                            <constraint firstItem="99L-fX-mEQ" firstAttribute="trailing" secondItem="aPA-qU-RTC" secondAttribute="trailing" constant="38" id="eRL-39-Ko1"/>
+                            <constraint firstItem="C7R-jJ-L5M" firstAttribute="centerX" secondItem="99L-fX-mEQ" secondAttribute="centerX" id="uXi-5m-lRe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="99L-fX-mEQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xNC-KS-1Tv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-608.79999999999995" y="886.50674662668678"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hFd-Y8-Mpt">
