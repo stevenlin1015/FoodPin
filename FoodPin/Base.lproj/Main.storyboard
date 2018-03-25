@@ -625,6 +625,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kim-L3-HQM">
+                                <rect key="frame" x="168" y="620" width="39" height="37"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYT-C1-ogP">
+                                <rect key="frame" x="316" y="617" width="39" height="30"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="tFY-df-MqS" eventType="touchUpInside" id="6m2-ge-JTX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.75294117647058822" green="0.22352941176470587" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -632,8 +644,12 @@
                             <constraint firstItem="8E4-ey-ORf" firstAttribute="centerX" secondItem="99L-fX-mEQ" secondAttribute="centerX" id="8MG-7d-rrr"/>
                             <constraint firstItem="8E4-ey-ORf" firstAttribute="top" secondItem="aPA-qU-RTC" secondAttribute="bottom" constant="8" id="O9i-ej-fBi"/>
                             <constraint firstItem="aPA-qU-RTC" firstAttribute="leading" secondItem="99L-fX-mEQ" secondAttribute="leading" constant="37" id="SGT-ub-gTN"/>
+                            <constraint firstItem="kim-L3-HQM" firstAttribute="centerX" secondItem="99L-fX-mEQ" secondAttribute="centerX" id="Uyl-JK-QFj"/>
                             <constraint firstItem="aPA-qU-RTC" firstAttribute="top" secondItem="C7R-jJ-L5M" secondAttribute="bottom" constant="14" id="WPn-EZ-aVY"/>
+                            <constraint firstItem="99L-fX-mEQ" firstAttribute="bottom" secondItem="eYT-C1-ogP" secondAttribute="bottom" constant="20" id="YtM-6k-wYG"/>
+                            <constraint firstItem="99L-fX-mEQ" firstAttribute="trailing" secondItem="eYT-C1-ogP" secondAttribute="trailing" constant="20" id="a3o-ox-sn8"/>
                             <constraint firstItem="99L-fX-mEQ" firstAttribute="trailing" secondItem="aPA-qU-RTC" secondAttribute="trailing" constant="38" id="eRL-39-Ko1"/>
+                            <constraint firstItem="99L-fX-mEQ" firstAttribute="bottom" secondItem="kim-L3-HQM" secondAttribute="bottom" constant="10" id="hR7-2F-rED"/>
                             <constraint firstItem="C7R-jJ-L5M" firstAttribute="centerX" secondItem="99L-fX-mEQ" secondAttribute="centerX" id="uXi-5m-lRe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="99L-fX-mEQ"/>
@@ -641,7 +657,9 @@
                     <connections>
                         <outlet property="contentImageView" destination="aPA-qU-RTC" id="GVa-yQ-Iu7"/>
                         <outlet property="contentLabel" destination="8E4-ey-ORf" id="Y75-ao-3A1"/>
+                        <outlet property="forwardButton" destination="eYT-C1-ogP" id="EEs-aW-5fG"/>
                         <outlet property="headingLabel" destination="C7R-jJ-L5M" id="i60-zV-7k2"/>
+                        <outlet property="pageControl" destination="kim-L3-HQM" id="ZV6-3r-7vJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNC-KS-1Tv" userLabel="First Responder" sceneMemberID="firstResponder"/>
