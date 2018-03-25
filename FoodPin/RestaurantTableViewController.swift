@@ -60,6 +60,10 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
         
         navigationController?.hidesBarsOnSwipe = true
         
+        if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough") {
+            return
+        }
+        
         if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughController") as? WalkthroughPageViewController {
             present(pageViewController, animated: true, completion: nil)
         }

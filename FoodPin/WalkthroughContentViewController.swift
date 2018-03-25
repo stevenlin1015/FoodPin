@@ -17,10 +17,11 @@ class WalkthroughContentViewController: UIViewController {
     @IBOutlet var forwardButton: UIButton!
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         switch index {
-        case 0...1:
+        case 0...1: // Next按鈕
             let pageViewController = parent as! WalkthroughPageViewController
             pageViewController.forward(index: index)
-        case 2:
+        case 2: // Done按鈕
+            UserDefaults.standard.set(true, forKey: "hasViewedWalkthrough")
             dismiss(animated: true, completion: nil)
         default:
             break
