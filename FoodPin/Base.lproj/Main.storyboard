@@ -569,10 +569,10 @@
             </objects>
             <point key="canvasLocation" x="1970" y="-567"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Walkthrough Page View Controller-->
         <scene sceneID="w45-1z-4iE">
             <objects>
-                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="WKK-dn-hHu" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="WKK-dn-hHu" customClass="WalkthroughPageViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2lM-5a-Oce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1324" y="150"/>
@@ -595,10 +595,10 @@
             </objects>
             <point key="canvasLocation" x="-334" y="150"/>
         </scene>
-        <!--View Controller-->
+        <!--Walkthrough Content View Controller-->
         <scene sceneID="QuZ-iO-Xvf">
             <objects>
-                <viewController storyboardIdentifier="WalkthroughContentViewController" id="tFY-df-MqS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughContentViewController" id="tFY-df-MqS" customClass="WalkthroughContentViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g38-B3-qkg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -638,6 +638,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="99L-fX-mEQ"/>
                     </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="aPA-qU-RTC" id="GVa-yQ-Iu7"/>
+                        <outlet property="contentLabel" destination="8E4-ey-ORf" id="Y75-ao-3A1"/>
+                        <outlet property="headingLabel" destination="C7R-jJ-L5M" id="i60-zV-7k2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNC-KS-1Tv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
