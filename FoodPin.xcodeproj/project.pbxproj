@@ -22,8 +22,8 @@
 		3FFFFF322065E7BA00DDB9E3 /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF312065E7BA00DDB9E3 /* AddRestaurantController.swift */; };
 		3FFFFF3A20677CF400DDB9E3 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF3920677CF400DDB9E3 /* WalkthroughContentViewController.swift */; };
 		3FFFFF3C20677F5E00DDB9E3 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF3B20677F5E00DDB9E3 /* WalkthroughPageViewController.swift */; };
-		3FFFFF422067A84400DDB9E3 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF402067A84400DDB9E3 /* about.storyboard */; };
-		3FFFFF452067A87A00DDB9E3 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF432067A87A00DDB9E3 /* discover.storyboard */; };
+		3FFFFF48206944D400DDB9E3 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF46206944D400DDB9E3 /* about.storyboard */; };
+		3FFFFF4B2069450000DDB9E3 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF492069450000DDB9E3 /* discover.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +44,8 @@
 		3FFFFF312065E7BA00DDB9E3 /* AddRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
 		3FFFFF3920677CF400DDB9E3 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		3FFFFF3B20677F5E00DDB9E3 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
-		3FFFFF412067A84400DDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/about.storyboard; sourceTree = "<group>"; };
-		3FFFFF442067A87A00DDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/discover.storyboard; sourceTree = "<group>"; };
+		3FFFFF47206944D400DDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/about.storyboard; sourceTree = "<group>"; };
+		3FFFFF4A2069450000DDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/discover.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +88,8 @@
 		3F9640D3204A5780005DBCE9 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
-				3FFFFF432067A87A00DDB9E3 /* discover.storyboard */,
-				3FFFFF402067A84400DDB9E3 /* about.storyboard */,
+				3FFFFF492069450000DDB9E3 /* discover.storyboard */,
+				3FFFFF46206944D400DDB9E3 /* about.storyboard */,
 				3F9640D4204A5780005DBCE9 /* AppDelegate.swift */,
 				3F9640D8204A5780005DBCE9 /* Main.storyboard */,
 				3F9640DB204A5780005DBCE9 /* Assets.xcassets */,
@@ -178,8 +178,8 @@
 			files = (
 				3F9640DF204A5780005DBCE9 /* LaunchScreen.storyboard in Resources */,
 				3F9640DC204A5780005DBCE9 /* Assets.xcassets in Resources */,
-				3FFFFF452067A87A00DDB9E3 /* discover.storyboard in Resources */,
-				3FFFFF422067A84400DDB9E3 /* about.storyboard in Resources */,
+				3FFFFF4B2069450000DDB9E3 /* discover.storyboard in Resources */,
+				3FFFFF48206944D400DDB9E3 /* about.storyboard in Resources */,
 				3F9640DA204A5780005DBCE9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,18 +224,18 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		3FFFFF402067A84400DDB9E3 /* about.storyboard */ = {
+		3FFFFF46206944D400DDB9E3 /* about.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3FFFFF412067A84400DDB9E3 /* Base */,
+				3FFFFF47206944D400DDB9E3 /* Base */,
 			);
 			name = about.storyboard;
 			sourceTree = "<group>";
 		};
-		3FFFFF432067A87A00DDB9E3 /* discover.storyboard */ = {
+		3FFFFF492069450000DDB9E3 /* discover.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3FFFFF442067A87A00DDB9E3 /* Base */,
+				3FFFFF4A2069450000DDB9E3 /* Base */,
 			);
 			name = discover.storyboard;
 			sourceTree = "<group>";
