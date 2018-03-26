@@ -24,6 +24,7 @@
 		3FFFFF3C20677F5E00DDB9E3 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF3B20677F5E00DDB9E3 /* WalkthroughPageViewController.swift */; };
 		3FFFFF48206944D400DDB9E3 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF46206944D400DDB9E3 /* about.storyboard */; };
 		3FFFFF4B2069450000DDB9E3 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF492069450000DDB9E3 /* discover.storyboard */; };
+		3FFFFF4D206945E500DDB9E3 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF4C206945E500DDB9E3 /* AboutTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		3FFFFF3B20677F5E00DDB9E3 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		3FFFFF47206944D400DDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/about.storyboard; sourceTree = "<group>"; };
 		3FFFFF4A2069450000DDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/discover.storyboard; sourceTree = "<group>"; };
+		3FFFFF4C206945E500DDB9E3 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				3FFFFF312065E7BA00DDB9E3 /* AddRestaurantController.swift */,
 				3FFFFF3920677CF400DDB9E3 /* WalkthroughContentViewController.swift */,
 				3FFFFF3B20677F5E00DDB9E3 /* WalkthroughPageViewController.swift */,
+				3FFFFF4C206945E500DDB9E3 /* AboutTableViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				3F779ABE205157F90067B27C /* RestaurantDetailViewController.swift in Sources */,
 				3F9640D5204A5780005DBCE9 /* AppDelegate.swift in Sources */,
 				3F779B6920636D6D0067B27C /* MapViewController.swift in Sources */,
+				3FFFFF4D206945E500DDB9E3 /* AboutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
