@@ -56,6 +56,21 @@ class AboutTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        //Leave us feedback block
+        case 0:
+            if indexPath.row == 0 {
+                if let url = URL(string: "http://www.apple.com/itunes/charts/") {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+        default:
+            break
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
