@@ -25,6 +25,8 @@
 		3FFFFF48206944D400DDB9E3 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF46206944D400DDB9E3 /* about.storyboard */; };
 		3FFFFF4B2069450000DDB9E3 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF492069450000DDB9E3 /* discover.storyboard */; };
 		3FFFFF4D206945E500DDB9E3 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF4C206945E500DDB9E3 /* AboutTableViewController.swift */; };
+		3FFFFF4F206A7D7C00DDB9E3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF4E206A7D7C00DDB9E3 /* WebViewController.swift */; };
+		3FFFFF6F206BF65100DDB9E3 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF6E206BF65100DDB9E3 /* DiscoverTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		3FFFFF47206944D400DDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/about.storyboard; sourceTree = "<group>"; };
 		3FFFFF4A2069450000DDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/discover.storyboard; sourceTree = "<group>"; };
 		3FFFFF4C206945E500DDB9E3 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		3FFFFF4E206A7D7C00DDB9E3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		3FFFFF6E206BF65100DDB9E3 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				3FFFFF3920677CF400DDB9E3 /* WalkthroughContentViewController.swift */,
 				3FFFFF3B20677F5E00DDB9E3 /* WalkthroughPageViewController.swift */,
 				3FFFFF4C206945E500DDB9E3 /* AboutTableViewController.swift */,
+				3FFFFF4E206A7D7C00DDB9E3 /* WebViewController.swift */,
+				3FFFFF6E206BF65100DDB9E3 /* DiscoverTableViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -194,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FFFFF6F206BF65100DDB9E3 /* DiscoverTableViewController.swift in Sources */,
 				3FFFFF322065E7BA00DDB9E3 /* AddRestaurantController.swift in Sources */,
 				3F779AC020518A0A0067B27C /* Restaurant.swift in Sources */,
 				3F9640E7204A5836005DBCE9 /* RestaurantTableViewController.swift in Sources */,
@@ -205,6 +212,7 @@
 				3F779ABE205157F90067B27C /* RestaurantDetailViewController.swift in Sources */,
 				3F9640D5204A5780005DBCE9 /* AppDelegate.swift in Sources */,
 				3F779B6920636D6D0067B27C /* MapViewController.swift in Sources */,
+				3FFFFF4F206A7D7C00DDB9E3 /* WebViewController.swift in Sources */,
 				3FFFFF4D206945E500DDB9E3 /* AboutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

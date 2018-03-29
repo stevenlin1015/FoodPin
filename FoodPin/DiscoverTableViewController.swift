@@ -1,20 +1,16 @@
 //
-//  AboutTableViewController.swift
+//  DiscoverTableViewController.swift
 //  FoodPin
 //
-//  Created by 林松賢 on 2018/3/26.
+//  Created by 林松賢 on 2018/3/29.
 //  Copyright © 2018年 軟實力工作室. All rights reserved.
 //
 
 import UIKit
-import SafariServices
 
-class AboutTableViewController: UITableViewController {
+class DiscoverTableViewController: UITableViewController {
+    @IBOutlet var spinner: UIActivityIndicatorView!
     
-    var sectionTitles = ["Leave Feedback", "Follow Us"]
-    var sectionContent = [["Rate us in App Store", "Tell us your feedback"],["Twitter","Facebook","Pinterest"]]
-    var links = ["https://twitter.com/appcodamobile","https://facebook.com/appcodamobile","https://www.pinterest.com/appcoda/"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,63 +19,52 @@ class AboutTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        spinner.hidesWhenStopped = true
+        spinner.center = view.center
+        tableView.addSubview(spinner)
+        spinner.startAnimating()
+        
+        //下拉更新控制
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = .white
+        refreshControl?.tintColor = .gray
+        refreshControl?.addTarget(self, action: #selector(fetchRecordsFromCloud), for: .valueChanged)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc func fetchRecordsFromCloud() {
+        if let refreshControl = self.refreshControl {
+            if refreshControl.isRefreshing {
+                refreshControl.endRefreshing()
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return sectionTitles.count
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return sectionContent[section].count
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = sectionContent[indexPath.section][indexPath.row]
-        
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-        //Leave us feedback block
-        case 0:
-            if indexPath.row == 0 {
-                if let url = URL(string: "http://www.apple.com/itunes/charts/") {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            } else if indexPath.row == 1 {
-                performSegue(withIdentifier: "showWebView", sender: self)
-            }
-        //Follow us block
-        case 1:
-            if let url = URL(string: links[indexPath.row]) {
-                let safariController = SFSafariViewController(url: url)
-                present(safariController, animated: true, completion: nil)
-            }
-        default:
-            break
-        }
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
