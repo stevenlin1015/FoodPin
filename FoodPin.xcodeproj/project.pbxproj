@@ -27,6 +27,9 @@
 		3FFFFF4D206945E500DDB9E3 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF4C206945E500DDB9E3 /* AboutTableViewController.swift */; };
 		3FFFFF4F206A7D7C00DDB9E3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF4E206A7D7C00DDB9E3 /* WebViewController.swift */; };
 		3FFFFF6F206BF65100DDB9E3 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFFF6E206BF65100DDB9E3 /* DiscoverTableViewController.swift */; };
+		3FFFFF73206D2E8300DDB9E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF75206D2E8300DDB9E3 /* Localizable.strings */; };
+		3FFFFF78206D2E8400DDB9E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF7A206D2E8400DDB9E3 /* InfoPlist.strings */; };
+		3FFFFF81206D313500DDB9E3 /* aboutfoodpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFFF83206D313500DDB9E3 /* aboutfoodpin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,14 @@
 		3FFFFF4C206945E500DDB9E3 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		3FFFFF4E206A7D7C00DDB9E3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3FFFFF6E206BF65100DDB9E3 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		3FFFFF70206D2E8200DDB9E3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3FFFFF74206D2E8300DDB9E3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3FFFFF79206D2E8400DDB9E3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		3FFFFF7B206D2E8400DDB9E3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		3FFFFF7C206D2E8500DDB9E3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/discover.strings"; sourceTree = "<group>"; };
+		3FFFFF7D206D2E8500DDB9E3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/about.strings"; sourceTree = "<group>"; };
+		3FFFFF82206D313500DDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/aboutfoodpin.png; sourceTree = "<group>"; };
+		3FFFFF84206D315600DDB9E3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/aboutfoodpin.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +105,9 @@
 		3F9640D3204A5780005DBCE9 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				3FFFFF7E206D30C600DDB9E3 /* images */,
+				3FFFFF7A206D2E8400DDB9E3 /* InfoPlist.strings */,
+				3FFFFF75206D2E8300DDB9E3 /* Localizable.strings */,
 				3FFFFF492069450000DDB9E3 /* discover.storyboard */,
 				3FFFFF46206944D400DDB9E3 /* about.storyboard */,
 				3F9640D4204A5780005DBCE9 /* AppDelegate.swift */,
@@ -116,6 +130,14 @@
 				3FFFFF6E206BF65100DDB9E3 /* DiscoverTableViewController.swift */,
 			);
 			path = FoodPin;
+			sourceTree = "<group>";
+		};
+		3FFFFF7E206D30C600DDB9E3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				3FFFFF83206D313500DDB9E3 /* aboutfoodpin.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +191,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 3F9640C8204A5780005DBCE9;
 			productRefGroup = 3F9640D2204A5780005DBCE9 /* Products */;
@@ -186,8 +209,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F9640DF204A5780005DBCE9 /* LaunchScreen.storyboard in Resources */,
+				3FFFFF78206D2E8400DDB9E3 /* InfoPlist.strings in Resources */,
+				3FFFFF73206D2E8300DDB9E3 /* Localizable.strings in Resources */,
 				3F9640DC204A5780005DBCE9 /* Assets.xcassets in Resources */,
 				3FFFFF4B2069450000DDB9E3 /* discover.storyboard in Resources */,
+				3FFFFF81206D313500DDB9E3 /* aboutfoodpin.png in Resources */,
 				3FFFFF48206944D400DDB9E3 /* about.storyboard in Resources */,
 				3F9640DA204A5780005DBCE9 /* Main.storyboard in Resources */,
 			);
@@ -224,6 +250,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3F9640D9204A5780005DBCE9 /* Base */,
+				3FFFFF7B206D2E8400DDB9E3 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -232,6 +259,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3F9640DE204A5780005DBCE9 /* Base */,
+				3FFFFF70206D2E8200DDB9E3 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -240,6 +268,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3FFFFF47206944D400DDB9E3 /* Base */,
+				3FFFFF7D206D2E8500DDB9E3 /* zh-Hant */,
 			);
 			name = about.storyboard;
 			sourceTree = "<group>";
@@ -248,8 +277,34 @@
 			isa = PBXVariantGroup;
 			children = (
 				3FFFFF4A2069450000DDB9E3 /* Base */,
+				3FFFFF7C206D2E8500DDB9E3 /* zh-Hant */,
 			);
 			name = discover.storyboard;
+			sourceTree = "<group>";
+		};
+		3FFFFF75206D2E8300DDB9E3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FFFFF74206D2E8300DDB9E3 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		3FFFFF7A206D2E8400DDB9E3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FFFFF79206D2E8400DDB9E3 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3FFFFF83206D313500DDB9E3 /* aboutfoodpin.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FFFFF82206D313500DDB9E3 /* Base */,
+				3FFFFF84206D315600DDB9E3 /* zh-Hant */,
+			);
+			name = aboutfoodpin.png;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
