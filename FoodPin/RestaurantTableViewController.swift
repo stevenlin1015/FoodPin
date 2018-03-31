@@ -138,6 +138,7 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
         content.subtitle = "Try new food today"
         content.body = "I recommend you to check out \(suggestedRestaurant.name). The restaurant is one of your favorites. It is located at \(suggestedRestaurant.location). Would you like to give it a try?"
         content.sound = UNNotificationSound.default()
+        content.userInfo = ["phone" : suggestedRestaurant.phone]
         let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
         let tempFileURL = tempDirURL.appendingPathComponent("suggested-restaurant.jpg")
         

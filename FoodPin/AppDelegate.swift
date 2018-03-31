@@ -10,9 +10,25 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.actionIdentifier == "foodpin.makeReservation" {
+            print("Make reservation...")
+            if let phone = response.notification.request.content.userInfo["phone"] {
+                let telURL = "tel://\(phone)"
+                if let url = URL(string: telURL) {
+                    if UIApplication.shared.canOpenURL(url) {
+                        print("calling \(telURL)")
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }
+            }
+        }
+        completionHandler()
+    }
 
     enum QuickAction: String {
         case OpenFavorites = "OpenFavorites"
@@ -73,6 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("User notifications are not allowed.")
             }
         }
+        UNUserNotificationCenter.current().delegate = self
         
         return true
     }
