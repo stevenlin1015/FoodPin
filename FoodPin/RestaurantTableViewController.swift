@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class RestaurantTableViewController: UITableViewController, UISearchResultsUpdating, UIViewControllerPreviewingDelegate {
     
@@ -57,6 +58,7 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
         if (traitCollection.forceTouchCapability == .available) {
             registerForPreviewing(with: self as UIViewControllerPreviewingDelegate, sourceView: view)
         }
+        prepareNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,6 +121,29 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
             filterContent(for: searchText)
             tableView.reloadData()
         }
+    }
+    
+    func prepareNotification() {
+        //確認餐廳陣列不為空值
+        if restaurants.count <= 0 {
+            return
+        }
+        //隨機選擇一間餐廳
+        let randomNum = Int(arc4random_uniform(UInt32(restaurants.count)))
+        let suggestedRestaurant = restaurants[randomNum]
+        
+        //建立使用者通知
+        let content = UNMutableNotificationContent()
+        content.title = "Restaurant Recommendation"
+        content.subtitle = "Try new food today"
+        content.body = "I recommend you to check out \(suggestedRestaurant.name). The restaurant is one of your favorites. It is located at \(suggestedRestaurant.location). Would you like to give it a try?"
+        content.sound = UNNotificationSound.default()
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let request = UNNotificationRequest(identifier: "foodpin.restaurantSuggestion", content: content, trigger: trigger)
+        
+        //排定通知
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 
     // MARK: - Table view data source
