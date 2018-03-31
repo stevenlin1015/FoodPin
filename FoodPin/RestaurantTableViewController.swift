@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantTableViewController: UITableViewController, UISearchResultsUpdating {
+class RestaurantTableViewController: UITableViewController, UISearchResultsUpdating, UIViewControllerPreviewingDelegate {
     
     var searchController: UISearchController!
     var restaurants:[Restaurant] = [
@@ -53,6 +53,10 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
         searchController.searchBar.placeholder = "Search restaurants..."
         searchController.searchBar.tintColor = .white
         searchController.searchBar.barTintColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+        
+        if (traitCollection.forceTouchCapability == .available) {
+            registerForPreviewing(with: self as UIViewControllerPreviewingDelegate, sourceView: view)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +76,32 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else {
+            return nil
+        }
+        
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return nil
+        }
+        
+        guard let restaurantDetailViewController = storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailViewController") as? RestaurantDetailViewController else {
+            return nil
+        }
+        
+        let selectedRestaurant = restaurants[indexPath.row]
+        restaurantDetailViewController.restaurant = selectedRestaurant
+        restaurantDetailViewController.preferredContentSize = CGSize(width: 0.0, height: 450.0)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return restaurantDetailViewController
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
     }
     
     func filterContent(for searchText: String) {
